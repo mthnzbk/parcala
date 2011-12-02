@@ -1,0 +1,42 @@
+===============================
+Version 1.8
+===============================
+
+* Yeni ana pencere oluşturuldu.
+* Doğrulama işlevi çalıştırıldı.
+* Modüler yapı oluşturuldu.
+* Birleştirme ve parçalama işlevi çalıştırıldı.
+* Süreçler transparan siyah bir widgette işliyor.
+* Birleştirme ve parçalama da dosya varlığı kontrolü eklendi.
+
+===============================
+Version 1.6
+===============================
+
+*  Bir dosyayı eşit parçaya bölme işlemi başarısız oluyordu, düzeltildi.
+*  File dialog Windowsta açılmıyordu düzeltildi.
+
+===============================
+Version 1.5
+===============================
+
+*  Doğrulama işlemine sha1 de eklendi.
+*  CSS kodları kaldırıldı.
+*  Doğrulamada okunan verinin rame yüklenmesi düzeltildi.
+*  md5 ve sha1 fonksiyonları Hash sınıfına alındı.
+*  Hata mesajları düzenlendi.
+
+===============================
+Version 1.1
+===============================
+
+*  Yazılamayan yerlere yazmaya çalışma hatası düzeltildi.
+*  Nereye butonuyla girdiğiniz isim değişmiyordu düzeltildi.
+
+===============================
+Version 1.0
+===============================
+
+*  Doğrulama özelliği eklendi.
+*  Birleştirme özelliği eklendi.
+*  Parçalama özelliği eklendi.
