@@ -15,19 +15,17 @@
 #You should have received a copy of the GNU General Public License
 #along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 setup(
     name = "parcala",
-    packages = ["parcala", "parcala.lib"],
+    packages = find_packages(),
     package_data = {"parcala" : ["resim/*", "language/*"]},
     scripts = ["scripts/parcala"],
     version = "1.8",
     license = "GPL v3",
-    description = u"""Parçala, Hj-Split ile aynı işi yapan dosya parçalama ve birleştirme yazılımıdır.
-
-    Parçala, büyük boyutlu dosyaları parçalara böldüğü gibi parçalanmış dosyaları birleştirme ve dosyaların doğrulamasını yapabilmektedir.""",
+    description = u"""Parçala, Hj-Split ile aynı işi yapan dosya parçalama ve birleştirme yazılımıdır.""",
     author = u"Metehan Özbek",
     author_email = "metehan@metehan.us",
     url = "http://www.metehan.us/",
@@ -37,11 +35,6 @@ setup(
         "Environment :: X11 Applications :: Qt",
         "Intended Audience :: End Users/Desktop",
         "License :: OSI Approved :: GNU Affero General Public License v3",
-        "Natural Language :: Turkish",
-        "Operating System :: POSIX :: Linux",
-        "Operating System :: Microsoft :: Windows",
-        "Operating System :: MacOS",
-        "Programming Language :: Python",
     ],
 
 )
