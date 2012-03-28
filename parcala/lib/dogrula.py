@@ -18,6 +18,7 @@
 from PyQt4.QtGui import QDialog, QGridLayout, QSizePolicy, QSpacerItem, QPushButton, QComboBox, QFileDialog, QMessageBox, QLineEdit
 from PyQt4.QtCore import QDir, QSize, QFile
 from karawidget import KaraWidget
+from settings import settings
 
 class DogrulaDialog(QDialog):
     def __init__(self, ui):
@@ -61,10 +62,12 @@ class DogrulaDialog(QDialog):
         self.karaWidget.hide()
 
     def nereden(self):
-        dosya = QFileDialog.getOpenFileName(self, "", QDir.homePath())
+        dosya = QFileDialog.getOpenFileName(self, "", settings().value("Genel/Yol").toString())
         if dosya == "":
             pass
         elif QFile.exists(dosya):
+            from os.path import abspath, dirname
+            settings().setValue("Genel/Yol", abspath(dirname(str(dosya))))
             self.neredenEdit.setText(dosya)
         else:
             QMessageBox.warning(self, self.trUtf8("Hata!"), self.trUtf8("Böyle bir dosya mevcut değil!"))

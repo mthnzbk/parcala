@@ -30,7 +30,7 @@ setup(
     author_email = "metehan@metehan.us",
     url = "http://www.metehan.us/",
     download_url = "",
-    keywords = ["PyQt4","Hj-Split", "Splitter","Parçala"],
+    keywords = ["PyQt4","Hj-Split", "Splitter", u"Parçala"],
     classifiers = [
         "Environment :: X11 Applications :: Qt",
         "Intended Audience :: End Users/Desktop",

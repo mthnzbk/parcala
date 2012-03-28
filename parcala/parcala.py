@@ -16,11 +16,12 @@
 #You should have received a copy of the GNU General Public License
 #along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from PyQt4.QtCore import Qt, QSize, QLocale, QTranslator
+from PyQt4.QtCore import Qt, QSize, QLocale, QTranslator, QSettings
 from PyQt4.QtGui import QWidget, QApplication, QIcon, QPixmap, QGridLayout, QPushButton, QLabel, QSpacerItem, QSizePolicy
 from lib import *
 
 import sys
+import os
 import resource
 
 class Parcala(QWidget):
@@ -94,6 +95,9 @@ class Parcala(QWidget):
 
 def main():
     from os.path import join, abspath, dirname
+    from lib.settings import initial
+    
+    initial()
     mainPath = abspath(dirname(__file__))
     app = QApplication(sys.argv)
     locale = QLocale.system().name()

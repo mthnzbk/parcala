@@ -18,6 +18,7 @@
 from PyQt4.QtGui import QDialog, QGridLayout, QSizePolicy, QSpacerItem, QPushButton, QFileDialog, QMessageBox, QLineEdit
 from PyQt4.QtCore import QDir, QSize, QFile
 from karawidget import KaraWidget
+from settings import settings
 
 class BirlestirDialog(QDialog):
     def __init__(self, ui):
@@ -64,19 +65,23 @@ class BirlestirDialog(QDialog):
 
 
     def nereden(self):
-        dosya = QFileDialog.getOpenFileName(self, u"", QDir.homePath(), self.trUtf8("001 Dosyası (*.001)"))
+        dosya = QFileDialog.getOpenFileName(self, u"", settings().value("Genel/Yol").toString(), self.trUtf8("001 Dosyası (*.001)"))
         if dosya == "":
             pass
         elif QFile.exists(dosya):
             self.neredenEdit.setText(dosya)
             self.nereyeEdit.setText(u"%s"%dosya[:-4])
+            from os.path import abspath, dirname
+            settings().setValue("Genel/Yol", abspath(dirname(str(dosya))))
         else:
             QMessageBox.warning(self, self.trUtf8("Hata!"), self.trUtf8("Böyle bir dosya mevcut değil!"))
 
     def nereye(self):
-        dosya = QFileDialog.getSaveFileName(self, "", QDir.homePath())
+        dosya = QFileDialog.getSaveFileName(self, "", settings().value("Genel/Yol").toString())
         if not dosya == "":
             self.nereyeEdit.setText(dosya)
+            from os.path import abspath, dirname
+            settings().setValue("Genel/Yol", abspath(dirname(str(dosya))))
 
     def birlestir(self):
         if self.neredenEdit.text() == "":
